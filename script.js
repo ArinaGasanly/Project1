@@ -89,3 +89,5 @@ if (fullPrice > 30000) {
 } else {
   console.log('Что-то пошло не так');
 }
+
+
