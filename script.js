@@ -15,10 +15,11 @@ console.log(screens.length);
 
 //Вывести в консоль “Стоимость разработки сайта (fullPrice) рублей/ долларов/гривен/юани” и “Стоимость верстки экранов (screenPrice) рублей/ долларов/гривен/юани” 
 let screenPrice = 756;
-console.log = ("Стоимость вёрстки экранов " + (fullPrice) + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + (screenPrice) + " RUB / USD / UAH / CNY");
+console.log = ("Стоимость вёрстки экранов " + Number(fullPrice) + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + Number(screenPrice) + " RUB / USD / UAH / CNY");
 
 // Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
-console.log(screens.toLowerCase().split(","));
+screens = ['Простые', 'Сложные', 'Интерактивные'];
+console.log(String(screens).toLowerCase().split(","));
 
 // Вывести в консоль Процент отката посреднику за работу (fullPrice * (rollback/100))
 let rollback = 300;
@@ -51,18 +52,20 @@ console.log(adaptive);
 // 6)
 
 let service1 = repair;
+let servicePrice1 = 500;
+let service2 = production;
+let servicePrice2 = 2000;
+
 service1 = prompt('Какой дополнительный тип услуги нужен?', '');
 console.log(service1);
 
-let servicePrice1 = 500;
 servicePrice1 = prompt('Сколько это будет стоить?', '');
 console.log(servicePrice1);
 
-let service2 = production;
+
 service2 = prompt('Какой дополнительный тип услуги нужен?', '');
 console.log(service2);
 
-let servicePrice2 = 2000;
 servicePrice2 = prompt('Сколько это будет стоить?', '');
 console.log(servicePrice2);
 
