@@ -15,7 +15,7 @@ console.log(screens.length);
 
 //Вывести в консоль “Стоимость разработки сайта (fullPrice) рублей/ долларов/гривен/юани” и “Стоимость верстки экранов (screenPrice) рублей/ долларов/гривен/юани” 
 let screenPrice = 756;
-console.log = ("Стоимость вёрстки экранов " + Number(fullPrice) + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + Number(screenPrice) + " RUB / USD / UAH / CNY");
+console.log("Стоимость вёрстки экранов " + Number(fullPrice) + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + Number(screenPrice) + " RUB / USD / UAH / CNY");
 
 // Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
 screens = ['Простые', 'Сложные', 'Интерактивные'];
