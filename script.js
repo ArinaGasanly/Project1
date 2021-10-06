@@ -19,7 +19,7 @@ console.log = ("Стоимость вёрстки экранов " + Number(full
 
 // Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
 screens = ['Простые', 'Сложные', 'Интерактивные'];
-console.log(String(screens).toLowerCase().split(","));
+console.log('Простые, Сложные, Интерактивные'.toLowerCase().split(","));
 
 // Вывести в консоль Процент отката посреднику за работу (fullPrice * (rollback/100))
 let rollback = 300;
