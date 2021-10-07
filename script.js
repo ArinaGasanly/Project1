@@ -1,51 +1,26 @@
-//Вывести в консоль тип данных значений переменных title, fullPrice, adaptive;
-
-let title = "Калькулятор вёрстки";
-console.log(typeof title);
-
-let fullPrice = 250000;
-console.log(typeof fullPrice);
-
-let adaptive = true;
-console.log(typeof adaptive);
-
-// Вывести в консоль тип данных значений переменных title, fullPrice, adaptive;
-let screens = ['Простые', 'Сложные', 'Интерактивные'];
-console.log(screens.length);
-
-//Вывести в консоль “Стоимость разработки сайта (fullPrice) рублей/ долларов/гривен/юани” и “Стоимость верстки экранов (screenPrice) рублей/ долларов/гривен/юани” 
-let screenPrice = 756;
-console.log("Стоимость вёрстки экранов " + fullPrice + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + screenPrice + " RUB / USD / UAH / CNY");
-
-// Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
-screens = ['Простые', 'Сложные', 'Интерактивные'];
-console.log('Простые, Сложные, Интерактивные'.toLowerCase().split(","));
-
-// Вывести в консоль Процент отката посреднику за работу (fullPrice * (rollback/100))
 let rollback = 300;
 let result = rollback / 100;
-console.log(fullPrice * result);
 
 
 // 3 урок
 
 // 3)
 
-title = prompt('Как называется ваш проект?', 'Lesson02');
+let title = prompt('Как называется ваш проект?', 'Калькулятор верстки');
 console.log('Проект называется ' + title);
 // 4)
 
-screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
+let screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
 console.log('Нужно разрабатывать следующие типы экранов: ' + screens);
 
 // 5)
 
-screenPrice = prompt('Сколько будет стоить данная работа?', 1200);
+let screenPrice = prompt('Сколько будет стоить данная работа?', 756);
 console.log(screenPrice);
 
 // 6)
 
-adaptive = confirm("Нужен ли адаптив на сайте?");
+let adaptive = confirm("Нужен ли адаптив на сайте?");
 console.log(adaptive);
 
 
@@ -65,7 +40,7 @@ console.log(servicePrice2);
 
 //8)
 
-fullPrice = screenPrice + servicePrice1 + servicePrice2;
+let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 console.log(fullPrice);
 
 //9)
@@ -86,3 +61,13 @@ if (fullPrice >= 30000) {
 }
 
 
+
+
+
+console.log(typeof title);
+console.log(typeof fullPrice);
+console.log(typeof adaptive);
+console.log(screens.length);
+console.log("Стоимость вёрстки экранов " + fullPrice + " RUB / USD / UAH / CNY" + " и Стоимость разработки сайта " + screenPrice + " RUB / USD / UAH / CNY");
+console.log('Простые, Сложные, Интерактивные'.toLowerCase().split(","));
+console.log(fullPrice * result);
