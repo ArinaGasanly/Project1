@@ -1,5 +1,3 @@
-// 5 урок
-
 let rollback = 30;
 let title = prompt('Как называется ваш проект?', 'Калькулятор верстки');
 let screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
@@ -13,26 +11,84 @@ let fullPrice = 3000;
 let servicePercentPrice = fullPrice - (fullPrice * (rollback / 100))
 
 
-//1 задание
+// 4 урок
+
+// 1)
+
+const getAllServicePrices = function () {
+  return servicePrice1 + servicePrice2;
+};
+
+const allServicePrices = getAllServicePrices();
+
+
+// 2)
+function getFullPrice() {
+  return screenPrice + allServicePrices;
+}
+
+getFullPrice();
+
+
+// 3)
+let str = 'title';
+
+function getTitle(title) {
+  return title.trim().charAt(0).toUpperCase() + title.trim().slice(1).toLowerCase();
+}
+title = getTitle(title);
+
+// 4)
+
+
+function getServicePercentPrices() {
+  return fullPrice - (fullPrice * (rollback / 100));
+}
+const servicePercentPrices = getServicePercentPrices();
+
+//5)
+console.log('Простые, Сложные, Интерактивные'.split(","));
+
+
+//6)
+
+
+const showTypeOf = function (data) {
+  console.log('Тип экранов' + data + ' является: ' + typeof data);
+}
+
+showTypeOf(' Простые ')
+showTypeOf(' Интерактивные ')
+showTypeOf(' Сложные ')
+
+
+const getRollbackMessage = function (price) {
+  if (price >= 30000) {
+    return 'Даем скидку в 10%'
+  } else if (price >= 15000 && price < 30000) {
+    return 'Даем скидку в 5%'
+  } else if (price >= 0 && price < 15000) {
+    return 'Скидка не предусмотрена'
+  } else {
+    return 'Что-то пошло не так'
+  }
+}
+
+
+
+
+
+//5 урок
 
 const allServicePrices = prompt('Сколько это будет стоить?', '4000');
+let screenPrice;
  
   do {
-    screenPrice = +prompt('Сколько будет стоить данная работа?', 2000);
+    screenPrice = prompt('Сколько будет стоить данная работа?');
 
-  } while (typeof screenPrice == 'number' && typeof allServicePrices == 'number') {
-      const getAllServicePrices = function () {
-        return prompt('Сколько это будет стоить?');
-  
-   } 
-  }
+  } while (!isNumber(screenPrice)); 
 
-  screenPrice();
-
-
-
-
-
+console.log(Object.is(allServicePrices, screenPrice));
 
 
   // Практическая часть (видео)
@@ -78,3 +134,5 @@ const getAllServicePrices = function () {
   //return servicePrice1 + servicePrice2
 }
 
+
+console.log(getRollbackMessage(fullPrice));
