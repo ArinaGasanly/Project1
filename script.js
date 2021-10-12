@@ -20,9 +20,9 @@ const asking = function () {
   adaptive = confirm('Нужен ли адаптив на сайте?')
 
   do {
-  screenPrice = prompt('Сколько будет стоить данная работа?')
+    screenPrice = prompt('Сколько будет стоить данная работа?')
   } while (!isNumber(screenPrice))
-  
+
 }
 
 asking() //вызов функции
@@ -42,15 +42,15 @@ const getAllServicePrices = function () {
       service2 = prompt('Какой дополнительный тип услуги нужен?')
 
     }
-     
+
     do {
       value = prompt('Сколько это будет стоить?')
     } while (!isNumber(value))
 
     sum += Number(value)
   }
-  
-  return sum 
+
+  return sum
 }
 
 
@@ -98,7 +98,6 @@ showTypeOf(adaptive)
 
 console.log(getRollbackMessage(fullPrice))
 console.log('Простые, Сложные, Интерактивные'.split(", "))
-
 
 
 
