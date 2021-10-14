@@ -11,7 +11,10 @@ let fullPrice;
 let servicePercentPrice;
 
 const isNumber = function (num) {
-  return !isNaN(parseFloat(num)) && isFinite(num)
+  if (num == 0) {
+    return;
+  } else
+    return !isNaN(parseFloat(num)) && isFinite(num)
 }
 
 const asking = function () {
@@ -98,6 +101,5 @@ showTypeOf(adaptive)
 
 console.log(getRollbackMessage(fullPrice))
 console.log('Простые, Сложные, Интерактивные'.split(", "))
-
 
 
