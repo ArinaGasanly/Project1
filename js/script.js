@@ -1,12 +1,12 @@
 
-const title = document.getElementsByTagName('h1')[0].outerText;
+const title = document.getElementsByTagName('h1')[0];
 const buttonsCount = document.getElementsByClassName('.handler_btn');
-const btn = document.querySelector('.screen - btn');
+const btn = document.querySelector('.screen-btn');
 const percentValue = document.querySelectorAll('.other-items.percent');
 const numberValue = document.querySelectorAll('other-items.number');
 const inputType = document.querySelector('.rollback input[type=range]');
-const rangeValue = document.querySelector('total-input');
-const allInputs = document.getElementsByClassName('div.rollback > div.main-controls__range > span.range-value');
+const allInputs = document.querySelector('div.rollback > div.main-controls__range > span.range-value');
+const rangeValue = document.getElementsByClassName('total-input');
 let screenBlocks = document.querySelectorAll('.screen');
 
 
