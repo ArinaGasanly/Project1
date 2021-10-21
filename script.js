@@ -12,7 +12,7 @@ bookElem[3].before(bookElem[4]);
 
 document.body.style.backgroundImage = "url('image/you-dont-know-js.jpg')";
 
-bookHeading[4].replaceWith('Книга 3. this и Прототипы Объектов');
+bookHeading[4].innerHTML ='Книга 3. this и Прототипы Объектов';
 
 bookAd.remove();
 
