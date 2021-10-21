@@ -1,138 +1,42 @@
-let rollback = 30;
-let title = prompt('Как называется ваш проект?', 'Калькулятор верстки');
-let screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
-let screenPrice = prompt('Сколько будет стоить данная работа?', 756);
-let adaptive = confirm("Нужен ли адаптив на сайте?");
-let service1 = prompt('Какой дополнительный тип услуги нужен?', '');
-let servicePrice1 = prompt('Сколько это будет стоить?', '');
-let service2 = prompt('Какой дополнительный тип услуги нужен?', '');
-let servicePrice2 = prompt('Сколько это будет стоить?', '');
-let fullPrice = 3000;
-let servicePercentPrice = fullPrice - (fullPrice * (rollback / 100))
+const bookList = document.querySelector('.books');
+const bookElem = document.querySelectorAll('.book');
+const bookHeading = document.querySelectorAll('[target="_blank"]');
+const bookAd = document.querySelector('.adv');
+const chapterOrder = document.querySelectorAll('li');
 
 
-// 4 урок
-
-// 1)
-
-const getAllServicePrices = function () {
-  return servicePrice1 + servicePrice2;
-};
-
-const allServicePrices = getAllServicePrices();
+bookList.append(bookElem[2]);
+bookList.prepend(bookElem[1]);
+bookElem[3].before(bookElem[4]);
 
 
-// 2)
-function getFullPrice() {
-  return screenPrice + allServicePrices;
-}
+document.body.style.backgroundImage = "url('image/you-dont-know-js.jpg')";
 
-getFullPrice();
+bookHeading[4].replaceWith('Книга 3. this и Прототипы Объектов');
 
-
-// 3)
-let str = 'title';
-
-function getTitle(title) {
-  return title.trim().charAt(0).toUpperCase() + title.trim().slice(1).toLowerCase();
-}
-title = getTitle(title);
-
-// 4)
+bookAd.remove();
 
 
-function getServicePercentPrices() {
-  return fullPrice - (fullPrice * (rollback / 100));
-}
-const servicePercentPrices = getServicePercentPrices();
-
-//5)
-console.log('Простые, Сложные, Интерактивные'.split(","));
-
-
-//6)
+chapterOrder[1].after(chapterOrder[3]);
+chapterOrder[3].after(chapterOrder[6]);
+chapterOrder[6].after(chapterOrder[8]);
+chapterOrder[8].after(chapterOrder[4]);
+chapterOrder[4].after(chapterOrder[5]);
+chapterOrder[5].after(chapterOrder[7]);
+chapterOrder[7].after(chapterOrder[9]);
 
 
-const showTypeOf = function (data) {
-  console.log('Тип экранов' + data + ' является: ' + typeof data);
-}
-
-showTypeOf(' Простые ')
-showTypeOf(' Интерактивные ')
-showTypeOf(' Сложные ')
-
-
-const getRollbackMessage = function (price) {
-  if (price >= 30000) {
-    return 'Даем скидку в 10%'
-  } else if (price >= 15000 && price < 30000) {
-    return 'Даем скидку в 5%'
-  } else if (price >= 0 && price < 15000) {
-    return 'Скидка не предусмотрена'
-  } else {
-    return 'Что-то пошло не так'
-  }
-}
+chapterOrder[47].after(chapterOrder[55]);
+chapterOrder[55].after(chapterOrder[49]);
+chapterOrder[49].after(chapterOrder[50]);
+chapterOrder[50].after(chapterOrder[48]);
+chapterOrder[48].after(chapterOrder[52]);
+chapterOrder[52].after(chapterOrder[53]);
 
 
+const newChapter = document.createElement('li');
+newChapter.className = "";
+newChapter.innerHTML = "Глава 8: За пределами ES6";
 
+chapterOrder[25].append(newChapter)
 
-
-//5 урок
-
-const allServicePrices = prompt('Сколько это будет стоить?', '4000');
-let screenPrice;
- 
-  do {
-    screenPrice = prompt('Сколько будет стоить данная работа?');
-
-  } while (!isNumber(screenPrice)); 
-
-console.log(Object.is(allServicePrices, screenPrice));
-
-
-  // Практическая часть (видео)
-
-const isNumber = function(num) {
-  return !isNaN(parseFloat(num)) && isFinite(num)
-}
-
-
-const asking = function() {
-  title = prompt('Как называется ваш проект?', 'Калькулятор верстки')
-
-  screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные')
-
-  screenPrice = prompt('Сколько будет стоить данная работа?')
-
-  while(isNumber(screenPrice) || screenPrice.trim() === "" || screenPrice === null) {
-    screenPrice = prompt('Сколько будет стоить данная работа?')
-  }
-
-  adaptive = confirm('Нужен ли адаптив на сайте?')
-}
-
-
-const getAllServicePrices = function () {
-  let sum = 0
-
-  for (let i = 0; i < 2; i++) {
-
-    if (i === 0) {
-      service1 = prompt('Какой дополнительный тип услуги нужен?')
-
-    } else if (i === 1) {
-      service2 = prompt('Какой дополнительный тип услуги нужен?')
-
-    }
-
-
-    sum += prompt('Сколько это будет стоить?')
-  }
-
-  return sum
-  //return servicePrice1 + servicePrice2
-}
-
-
-console.log(getRollbackMessage(fullPrice));
