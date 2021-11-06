@@ -72,6 +72,64 @@ const appData = {
 
   },
 
+  includeResetBtn: function() {
+    startBtn.style.display = "none";
+    resetBtn.style.display = "";
+  },
+
+  includeStartBtn: function () {
+    resetBtn.style.display = "none";
+    startBtn.style.display = "";
+  },
+
+
+  removeTested: function () {
+    const customCheckbox = document.querySelectorAll('.custom-checkbox');
+    customCheckbox.forEach((input) => {
+      if (input.checked == true) {
+        input.checked = false;
+      }
+    })
+  },
+
+  removeAttribute: function() {
+    screens = document.querySelectorAll('.screen')
+
+    screens.forEach((screen, index) => {
+      const select = screen.querySelector('select');
+      const input = screen.querySelector('input')
+      select.removeAttribute('disabled')
+      input.removeAttribute('disabled')
+
+      if (index > 0) {
+        screen.remove()
+      }
+
+      delete appData.screens[index]
+      input.value = "";
+      select.selectedIndex = 0;
+    })
+  },
+
+  resetResults: function () {
+    total.value = 0;
+    totalCount.value = 0;
+    totalCountOther.value = 0;
+    fullTotalCount.value = 0;
+    totalCountRollback.value = 0;
+    inputRange.value = 0;
+    this.fullPrice = 0;
+    this.screens = [];
+    this.servicePricesPercent = 0;
+    this.servicePricesNumber = 0;
+    this.screensNumber = 0;
+    this.screenPrice = 0;
+    this.rollback = 30;
+    this.servicePercentPrice = 0;
+    this.servicesPercent = {};
+    this.servicesNumber = {};
+  },
+
   testedScreenField: function () {
     screens = document.querySelectorAll('.screen')
     screens.forEach((screen) => {
@@ -98,6 +156,13 @@ const appData = {
 
     //this.logger();
     this.showResult()
+  },
+
+  reset: function () {
+    this.includeStartBtn();
+    this.removeTested();
+    this.resetResults();
+    this.removeAttribute();
   },
 
   showResult: function () {
@@ -174,10 +239,6 @@ const appData = {
     appData.fullPrice = +appData.screenPrice + appData.servicePricesNumber + appData.servicePricesPercent;
 
     appData.servicePercentPrice = Math.ceil(appData.fullPrice - (appData.fullPrice * (appData.rollback / 100)));
-  },
-  reset: function () {
-
-  
   },
   logger: function () {
     console.log(this.fullPrice);
