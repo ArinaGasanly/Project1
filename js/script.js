@@ -46,6 +46,13 @@ const appData = {
       this.testedScreenField();
     })
 
+    resetBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      appData.isError = false;
+      this.reset();
+
+    });
+
     btnPlus.addEventListener('click', this.addScreenBlock);
     inputRange.addEventListener('input', this.getRollbackPercent);
   },
@@ -118,6 +125,7 @@ const appData = {
     fullTotalCount.value = 0;
     totalCountRollback.value = 0;
     inputRange.value = 0;
+    inputRangeValue.textContent = 0;
     this.fullPrice = 0;
     this.screens = [];
     this.servicePricesPercent = 0;
@@ -146,6 +154,8 @@ const appData = {
 
     if (!this.isError) {
       this.start();
+      this.includeStartBtn();
+      this.includeResetBtn()
     }
   },
 
